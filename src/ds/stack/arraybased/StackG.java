@@ -1,16 +1,13 @@
 package ds.stack.arraybased;
 
+import ds.Colorized;
+
 import java.util.ArrayList;
 
-public class StackG<T> {
+public class StackG<T> implements Colorized {
     private int top;
     private ArrayList<T> item;
     static private int MAX_SIZE;
-
-    // Colors
-    public static final String ANSI_RESET = "\u001B[0m";
-    public static final String ANSI_RED = "\u001B[31m";
-    public static final String ANSI_GREEN = "\u001B[32m";
 
     public StackG(int size){
         top = -1;
