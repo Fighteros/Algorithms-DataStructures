@@ -3,16 +3,17 @@
 using namespace std;
 
 const int MAX_SIZE = 100;
+template <class t>
 
 class stack
 {
     int top;
-    int item[MAX_SIZE];
+    t item[MAX_SIZE];
 
 public:
     stack() : top(-1) {}
 
-    void push(int element)
+    void push(t element)
     {
         if (top >= MAX_SIZE - 1)
         {
@@ -37,7 +38,7 @@ public:
             top--;
     }
 
-    void pop(int &element)
+    void pop(t &element)
     {
         if (isEmpty())
         {
@@ -50,7 +51,7 @@ public:
         }
     }
 
-    void getTop(int &stackTop)
+    void getTop(t &stackTop)
 
     {
         if (isEmpty())
@@ -79,7 +80,7 @@ public:
 int main()
 {
 
-    stack s;
+    stack<int> s;
     s.push(5);
     s.push(10);
     s.push(15);
