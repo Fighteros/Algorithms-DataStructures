@@ -1,9 +1,0 @@
-{
-    "files.associations": {
-        "*.tcc": "cpp",
-        "functional": "cpp",
-        "istream": "cpp",
-        "ranges": "cpp",
-        "streambuf": "cpp"
-    }
-}
