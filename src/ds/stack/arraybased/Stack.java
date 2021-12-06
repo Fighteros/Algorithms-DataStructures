@@ -1,36 +1,26 @@
-package com.fos.stack.arraybased;
+package ds.stack.arraybased;
 
-import java.util.ArrayList;
 
-public class StackG<T> {
+public class Stack {
+    static final int MAX = 6;
     private int top;
-    private ArrayList<T> item;
-    static private int MAX_SIZE;
+    private int[] item = new int[MAX];
 
     // Colors
     public static final String ANSI_RESET = "\u001B[0m";
     public static final String ANSI_RED = "\u001B[31m";
     public static final String ANSI_GREEN = "\u001B[32m";
 
-    public StackG(int size){
+    public Stack() {
         top = -1;
-        MAX_SIZE = size;
-        item = new ArrayList<T>(MAX_SIZE);
     }
 
-    public void push(T number) {
-        if (top >= MAX_SIZE - 1) {
+    public void push(int number) {
+        if (top >= MAX - 1) {
             System.out.println(ANSI_RED + "Stack Full on push" + ANSI_RESET);
         } else {
-            if(item.size() > top + 1){
-                item.set(++top, number);
-            }
-            else {
-                ++top;
-                item.add(number);
-            }
-            System.out.println(ANSI_GREEN + item.get(top) + " is pushed successfully " + ANSI_RESET);
-
+            item[++top] = number;
+            System.out.println(ANSI_GREEN + item[top] + " is pushed successfully " + ANSI_RESET);
         }
     }
 
@@ -48,6 +38,7 @@ public class StackG<T> {
         return !isEmpty();
     }
 
+
     /**
      * this function only pops latest number without returning it
      * if stack isn't empty
@@ -56,7 +47,7 @@ public class StackG<T> {
         if (isEmpty()) {
             System.out.println(ANSI_RED + "Stack empty on pop" + ANSI_RESET);
         } else {
-            System.out.println(ANSI_GREEN+ "Popped "+ item.get(top--)+ " Successfully" + ANSI_RESET);
+            System.out.println(ANSI_GREEN+ "Popped "+ item[top--]+ " Successfully" + ANSI_RESET);
         }
     }
 
@@ -64,25 +55,25 @@ public class StackG<T> {
      * this function returns 0 if stack is empty
      * returns the number - latest number- if stack is not empty
      */
-    public T popAndGet() {
+    public int popAndGet() {
         if (isEmpty()) {
             System.out.println(ANSI_RED + "Stack empty on pop" + ANSI_RESET);
-            return null;
+            return 0;
         } else {
-            return item.get(top--);
+            return item[top--];
         }
     }
 
     /**
      * this function returns the top number of stack and <tt>Prints</tt> it if it isn't empty
      */
-    public T getTop() {
+    public int getTop() {
         if (isEmpty()) {
             System.out.println(ANSI_RED + "stack empty on top" + ANSI_RESET);
-            return null;
+            return 0;
         } else {
-            System.out.println(ANSI_GREEN + item.get(top) + ANSI_RESET);
-            return item.get(top);
+            System.out.println(ANSI_GREEN + item[top] + ANSI_RESET);
+            return item[top];
         }
     }
 
@@ -91,7 +82,7 @@ public class StackG<T> {
      */
     public void print() {
         for (int j = top; j > 0; j--) {
-            System.out.print(ANSI_GREEN + item.get(j) + " " + ANSI_RESET);
+            System.out.print(ANSI_GREEN + item[j] + " " + ANSI_RESET);
         }
         if(isEmpty()) {
             System.out.println(ANSI_RED+ "Stack is Empty!"+ ANSI_RESET);
@@ -109,5 +100,7 @@ public class StackG<T> {
             System.out.println(ANSI_RED+ "Stack is already empty!");
         }
     }
+
+
 
 }

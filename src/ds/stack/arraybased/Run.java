@@ -1,4 +1,4 @@
-package com.fos.stack.arraybased;
+package ds.stack.arraybased;
 
 public class Run {
     public static void main(String[] args) {

@@ -1,4 +1,4 @@
-package com.fos.stack;
+package ds;
 
 public interface Colorized {
 

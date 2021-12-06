@@ -1,4 +1,4 @@
-package com.fos.stack.linkedlist;
+package ds.stack.linked;
 
 public class Run {
     public static void main(String[] args) {

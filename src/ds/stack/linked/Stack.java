@@ -1,6 +1,6 @@
-package com.fos.stack.linkedlist;
+package ds.stack.linked;
 
-import com.fos.stack.Colorized;
+import ds.Colorized;
 
 public class Stack<T> implements Colorized {
     Node<T> top, cur;

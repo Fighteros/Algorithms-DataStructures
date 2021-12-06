@@ -1,4 +1,4 @@
-package com.fos.stack.linkedlist;
+package ds.stack.linked;
 
 public class Node<T> {
     T item;
