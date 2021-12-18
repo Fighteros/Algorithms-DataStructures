@@ -7,6 +7,9 @@ public class BubbleSort {
         this.arr = arr;
     }
 
+    /**
+     * Sort.
+     */
     public void sort(){
         int count = 0;
         for (int i = 0; i < arr.length; i++){

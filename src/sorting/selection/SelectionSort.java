@@ -8,6 +8,11 @@ public class SelectionSort {
     }
 
     // sort the array by selection Sort
+
+
+    /**
+     * Sort.
+     */
     public void  sort() {
         for(int i = 0; i < arr.length ; i++){
             // select the smallest number each time
