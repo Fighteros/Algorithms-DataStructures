@@ -1,7 +1,30 @@
 package sorting.insertion;
 
-public class InsertionSort {
+import sorting.util;
 
+import static sorting.util.printArray;
+
+/**
+ * The type Insertion sort.
+ */
+public class InsertionSort {
+    /**
+     * The entry point of application.
+     *
+     * @param args the input arguments
+     */
+    public static void main(String[] args) {
+
+        int arr[] = util.arr;
+
+        printArray(arr);
+
+        System.out.println();
+
+        InsertionSort.sort(arr);
+
+        printArray(arr);
+    }
 
     /**
      * Sort.
