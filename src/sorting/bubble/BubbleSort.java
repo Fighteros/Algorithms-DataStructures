@@ -53,7 +53,7 @@ public class BubbleSort {
             }
 
             if(isSorted){
-                System.out.println("array is sorted! break now!");
+//                System.out.println("array is sorted! break now!");
                 return;
             }
         }
