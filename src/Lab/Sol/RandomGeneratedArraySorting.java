@@ -32,12 +32,16 @@ public class RandomGeneratedArraySorting {
 //        selectionSort(arr);
 //        bubbleSort(arr);
 
-        mergeSort(arr);
+//        mergeSort(arr);
+
+//        insertionSort(arr);
+
+        quickSort(arr);
         // print sorted values
         printArray(arr);
 
         long end = System.nanoTime();
-        System.out.println("Run time for Merge sort is " + getRunTime(start, end) + "ms");
+        System.out.println("Run time for quick sort is " + getRunTime(start, end) + "ms");
     }
 
 
@@ -107,7 +111,7 @@ public class RandomGeneratedArraySorting {
         }
     }
 
-    // merge sort
+    /* merge sort */
     public static void mergeSort(int arr[]) {
         mergeSort(arr, 0, arr.length - 1);
     }
@@ -168,6 +172,68 @@ public class RandomGeneratedArraySorting {
             k++;
             j++;
         }
+    }
+    /* end  merge sort */
+
+    public static void insertionSort(int arr[]){
+        int j, key;
+
+        for(int i = 1; i < arr.length; i++){
+            key = arr[i];
+            j = i - 1 ;
+
+            // shift elements
+            while(j >= 0 && arr[j] > key){
+                arr[j + 1] = arr[j];
+                j--;
+            }
+
+            arr[j + 1] = key;
+        }
+    }
+
+
+    /* quick sort */
+    public static void quickSort(int arr[]) {
+        quickSort(arr, 0, arr.length - 1 );
+    }
+
+    public static void quickSort(int[] arr, int start, int end) {
+        if(start < end) {
+            int pivot = partition(arr, start, end);
+
+            quickSort(arr, start, pivot);
+
+            quickSort(arr, pivot + 1, end);
+        }
+    }
+
+    private static int partition(int[] arr, int start, int end) {
+        int i = start;
+        int j = end;
+
+        int pivot = arr[i];
+
+        while(i < j) {
+
+            while (arr[i] < pivot) {
+                i++;
+            }
+
+            while(arr[j] > pivot) {
+                j--;
+            }
+
+            if(i < j) {
+                // swap
+                int temp = arr[i];
+                arr[i] = arr[j];
+                arr[j] = temp;
+                i++;
+                j--;
+            }
+        }
+        return j;
     }
 
 
